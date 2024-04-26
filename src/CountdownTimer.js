@@ -19,7 +19,7 @@ const CountdownTimer = ({ targetDate }) => {
 const ShowCounter = ({ weeks, days, hours, minutes, seconds }) => {
     return (
       <div className="flex h-screen w-full justify-center items-center">
-        <div className='flex flex-col w-[230px] h-[470px] items-center justify-evenly bg-white shadow-lg border rounded-3xl'>
+        <div className='flex flex-col w-[230px] h-[400px] items-center justify-evenly bg-white shadow-lg border rounded-3xl'>
           <DateTimeDisplay value={weeks} type={'Semanas'} />
           <div className='divider div-transparent' />
           <DateTimeDisplay value={days} type={'Dias'} />
