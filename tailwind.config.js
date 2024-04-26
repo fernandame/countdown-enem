@@ -4,7 +4,14 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+        'sans': ['Bebas Neue']
+    },
+    extend: {
+      colors: {
+        "primary": "#ff90a0",
+      },
+    },
   },
   plugins: [],
 }
