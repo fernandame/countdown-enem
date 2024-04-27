@@ -19,13 +19,13 @@ const CountdownTimer = ({ targetDate }) => {
 };
 
 const ShowCounter = ({ weeks, days, hours, minutes, seconds }) => {
-  const [darkMode, useDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(false)
 
     return (
       <div className={cx("flex h-screen w-full justify-center items-center", darkMode ? "bg-dark-mode" : "bg-white")}>
         <div className={cx('flex flex-col w-[230px] h-[450px] items-center justify-evenly border relative', darkMode ? "border-white/20 shadow":"")}>
           <DarkModeButton
-            onClick={() => useDarkMode(!darkMode)}
+            onClick={() => setDarkMode(!darkMode)}
             darkMode={darkMode} />
           <DateTimeDisplay value={weeks} type={'Semanas'} darkMode={darkMode} />
           <div className='divider div-transparent' />
