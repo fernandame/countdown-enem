@@ -6,7 +6,7 @@ const DateTimeDisplay = ({ value, type, darkMode }) => {
         <span className='text-[8rem] -mt-7'>
             {value}
         </span>
-        <span className='-mt-10 text-2xl text-primary'>
+        <span className='-mt-10 text-2xl text-primary tracking-widest'>
             {type}
         </span>
     </div>
