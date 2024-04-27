@@ -1,6 +1,8 @@
-const DateTimeDisplay = ({ value, type }) => {
+const cx = require('classnames');
+
+const DateTimeDisplay = ({ value, type, darkMode }) => {
   return (
-    <div className='flex flex-col items-center text-center'>
+    <div className={cx('flex flex-col items-center text-center', darkMode && "text-white")}>
         <span className='text-[8rem] -mt-7'>
             {value}
         </span>

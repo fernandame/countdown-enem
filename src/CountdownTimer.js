@@ -1,6 +1,8 @@
-import React from 'react';
-import { useCountdown } from './useCountdown';
-import DateTimeDisplay from './DateTimeDisplay';
+import { useState } from 'react'
+import { useCountdown } from './useCountdown'
+import DateTimeDisplay from './DateTimeDisplay'
+import DarkModeButton from './DarkModeButton'
+const cx = require('classnames')
 
 const CountdownTimer = ({ targetDate }) => {
   const [weeks, days, hours, minutes, seconds] = useCountdown(targetDate);
@@ -9,23 +11,25 @@ const CountdownTimer = ({ targetDate }) => {
       <ShowCounter
         weeks={weeks}
         days={days}
-        hours={hours}
-        minutes={minutes}
-        seconds={seconds}
-      />
+        // hours={hours}
+        // minutes={minutes}
+        // seconds={seconds}
+        />
     );
 };
 
 const ShowCounter = ({ weeks, days, hours, minutes, seconds }) => {
+  const [darkMode, useDarkMode] = useState(false)
+
     return (
-      <div className="flex h-screen w-full justify-center items-center">
-        <div className='flex flex-col w-[230px] h-[450px] items-center justify-evenly bg-white border'>
-          <DateTimeDisplay value={weeks} type={'Semanas'} />
+      <div className={cx("flex h-screen w-full justify-center items-center", darkMode ? "bg-dark-mode" : "bg-white")}>
+        <div className={cx('flex flex-col w-[230px] h-[450px] items-center justify-evenly border relative', darkMode ? "border-white/20 shadow":"")}>
+          <DarkModeButton
+            onClick={() => useDarkMode(!darkMode)}
+            darkMode={darkMode} />
+          <DateTimeDisplay value={weeks} type={'Semanas'} darkMode={darkMode} />
           <div className='divider div-transparent' />
-          <DateTimeDisplay value={days} type={'Dias'} />
-          {/* <DateTimeDisplay value={hours} type={'Horas'} /> */}
-          {/* <DateTimeDisplay value={minutes} type={'Minutos'} /> */}
-          {/* <DateTimeDisplay value={seconds} type={'Segundos'}/> */}
+          <DateTimeDisplay value={days} type={'Dias'} darkMode={darkMode}  />
         </div>
       </div>
     );
