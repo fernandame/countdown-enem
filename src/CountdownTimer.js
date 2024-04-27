@@ -23,7 +23,7 @@ const ShowCounter = ({ weeks, days, hours, minutes, seconds }) => {
 
     return (
       <div className={cx("flex h-screen w-full justify-center items-center", darkMode ? "bg-dark-mode" : "bg-white")}>
-        <div className='flex flex-col w-[230px] h-[445px] items-center justify-evenly'>
+        <div className='flex flex-col w-[230px] h-[445px] items-center justify-evenly -mt-8'>
           <DarkModeButton
             onClick={() => setDarkMode(!darkMode)}
             darkMode={darkMode} />
